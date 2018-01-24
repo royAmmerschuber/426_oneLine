@@ -11,6 +11,8 @@ public class Database {
     public static Connection getConnection  (){
         if(con ==null){
             try {
+                Properties p= new Properties();
+                p.load(new FileInputStream("database.prop"));
                 Class.forName("com.mysql.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/426","root","");
 
