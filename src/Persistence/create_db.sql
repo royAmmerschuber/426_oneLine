@@ -4,6 +4,7 @@ drop TABLE IF EXISTS Product;
 drop TABLE IF EXISTS Image;
 drop TABLE IF EXISTS Category;
 drop TABLE IF EXISTS Kart;
+
 create table User(
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   userName VARCHAR(64) NOT NULL ,
@@ -55,5 +56,4 @@ INSERT INTO Product (sellerFK, categoryFK, name, amount, description, price) VAL
   ((select id from User WHERE userName='numberOne'),2,'Ammerhai',29,'ein Barscher hai',19.9),
   ((select id from User WHERE userName='numberOne'),3,'harald Töpfer',3,'...',2.39),
   ((select id from User WHERE userName='numberOne'),4,'neziri-mobil',1,'',582173.66),
-  ((select id from User WHERE userName='numberOne'),4,'Why Man?',3,'Ein epischer roman mit epischen fragen',29.45)
-;
+  ((select id from User WHERE userName='numberOne'),4,'Why Man?',3,'Ein epischer roman mit epischen fragen',29.45);
