@@ -1,5 +1,7 @@
 package Persistence;
 
+import Control.Login;
+
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -44,6 +46,7 @@ public class Database {
                     "  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,\n" +
                     "  userName VARCHAR(64) NOT NULL ,\n" +
                     "  password VARCHAR(128) NOT NULL ,\n" +
+                    "  salt VARCHAR(128) NOT NULL ,"+
                     "  image VARCHAR(128)\n" +
                     ");");
             con.createStatement().executeUpdate(
@@ -55,7 +58,9 @@ public class Database {
                     "  country varchar(64) NOT NULL ,\n" +
                     "  cuty varchar(64) NOT NULL ,\n" +
                     "  plz VARCHAR(8) NOT NULL ,\n" +
-                    "  street varchar(64) NOT NULL\n" +
+                    "  street varchar(64) NOT NULL,\n" +
+                    "  email varchar(64) NOT NULL," +
+                    "  phone VARCHAR(64) NOT NULL " +
                     ");");
             con.createStatement().executeUpdate(
                     "CREATE TABLE Product(\n" +
@@ -85,12 +90,14 @@ public class Database {
                     "  productFK int NOT NULL ,\n" +
                     "  amount int NOT NULL\n" +
                     ");");
+            /*con.createStatement().executeUpdate(
+                    "insert INTO User (userName,salt, password) VALUES\n" +
+                    "  ('numberOne','jiodsagfnav','^fjdkahfahklghqhagjahgd');");
             con.createStatement().executeUpdate(
-                    "insert INTO User (userName, password) VALUES\n" +
-                    "  ('numberOne','^fjdkahfahklghqhagjahgd');");
-            con.createStatement().executeUpdate(
-                    "INSERT INTO Address (userFK, firstName, lastName, country, cuty, plz, street) VALUEs\n" +
-                    "  ((select id from User WHERE userName='numberOne'),'max','muster','Switzerland','Bern','1234','holzweg 12c');");
+                    "INSERT INTO Address (userFK, firstName, lastName, country, cuty, plz, street,email,phone) VALUEs\n" +
+                    "  ((select id from User WHERE userName='numberOne'),'max','muster','Switzerland','Bern','1234','holzweg 12c','mail@mail.web.cim','12345689');");
+            */
+            Login.addUser("numberOne", "gibbiX12345","max","muster","switzerland","bern","1234","holzweg 12c","mail@mail.com","64387164598");
             con.createStatement().executeUpdate(
                     "Insert INTO Category (name) VALUES " +
                     "('Table'),('Fish'),('Book'),('Car');");
