@@ -93,7 +93,7 @@ public class Database {
                     "  ((select id from User WHERE userName='numberOne'),'max','muster','Switzerland','Bern','1234','holzweg 12c');");
             con.createStatement().executeUpdate(
                     "Insert INTO Category (name) VALUES " +
-                            "('Table'),('Fish'),('Book'),('Car');");
+                    "('Table'),('Fish'),('Book'),('Car');");
             con.createStatement().executeUpdate(
                     "INSERT INTO Product (sellerFK, categoryFK, name, amount, description, price) VALUEs\n" +
                     "  ((select id from User WHERE userName='numberOne'),1,'Holztisch',3,'ein eleganter holztisch mit elegantem Design',5.49),\n" +
