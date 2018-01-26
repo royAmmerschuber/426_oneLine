@@ -291,7 +291,15 @@ p.ps{
   left: 0;
   pointer-events: none;
 }
-
+div.textareaa{
+  border-style: groove;
+  border-color: #80bdff;
+  width: 160px;
+}
+input.inputfields{
+  border-style: groove;
+  border-color: #80bdff;
+}
 .focus-input100::before {
   content: "";
   display: block;
