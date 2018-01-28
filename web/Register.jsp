@@ -32,7 +32,7 @@
 <div class="limiter">
     <div class="container-login100" style="background-image: url('images/back.jpg');">
         <div class="wrap-login100">
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form" action="/Auth/Register" method="post">
 					<span class="login100-form-logo">
 						<img class="firmenlogo" src="images/Firmenlogo.PNG">
 					</span>
@@ -44,21 +44,25 @@
 						Account
 					</span><br><br>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Name">
+                    <input class="input100" type="text" name="name" placeholder="Name">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Firstname">
+                    <input class="input100" type="text" name="firstName" placeholder="Firstname">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <input class="input100" type="text" name="userName" placeholder="Username">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input class="input100" type="password" name="password1" placeholder="Password">
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="password" name="password2" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
                 <span class="undertitle">
@@ -66,30 +70,30 @@
                 </span>
                 <br><br>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Email">
+                    <input class="input100" type="email" name="email" placeholder="Email">
                     <span class="focus-input100" data-placeholder="&#9742;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Phonenumber">
+                    <input class="input100" type="tel" name="phone" placeholder="Phonenumber">
                     <span class="focus-input100" data-placeholder="&#9742;"></span>
                 </div>
                 <span class="undertitle">
 						Address Information
                 </span><br><br>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Country">
+                    <input class="input100" type="text" name="country" placeholder="Country">
                     <span class="focus-input100" data-placeholder="&#8962;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="City">
+                    <input class="input100" type="text" name="city" placeholder="City">
                     <span class="focus-input100" data-placeholder="&#8962;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Street">
+                    <input class="input100" type="text" name="street" placeholder="Street">
                     <span class="focus-input100" data-placeholder="&#8962;"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="PLZ">
+                    <input class="input100" type="text" name="plz" placeholder="PLZ">
                     <span class="focus-input100" data-placeholder="&#8962;"></span>
                 </div>
                 <div class="container-login100-form-btn">

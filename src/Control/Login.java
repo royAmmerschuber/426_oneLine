@@ -59,11 +59,19 @@ public class Login {
         return false;
     }
 
-    public static void addUser(String name, String password,String firstName,String lastName,
-                               String country,String cuty,String plz,String street,String email,String phone){
+    public static boolean addUser(String name, String password,String firstName,String lastName,
+                               String country,String city,String plz,String street,String email,String phone){
 
         try {
-            PreparedStatement p=Database.getConnection().prepareStatement(
+            PreparedStatement p;
+            p=Database.getConnection().prepareStatement("select count(*) from User WHERE userName=?");
+            p.setString(1,name);
+            ResultSet rs=p.executeQuery();
+            rs.next();
+            if(rs.getInt(1)!=0){
+                return false;
+            }
+            p=Database.getConnection().prepareStatement(
                     "INSERT INTO User (userName,password,salt) VALUES (?,?,?);");
             String salt="";
             for(int i=0;i<64;i++){
@@ -76,12 +84,12 @@ public class Login {
             p.setString(3,salt);
             p.execute();
             p=Database.getConnection().prepareStatement(
-                    "Insert INTO Address(userFK, firstName, lastName, country, cuty, plz, street,email,phone) VALUES ((select id FROM User where userName=?),?,?,?,?,?,?,?,?)");
+                    "Insert INTO Address(userFK, firstName, lastName, country, city, plz, street,email,phone) VALUES ((select id FROM User where userName=?),?,?,?,?,?,?,?,?)");
             p.setString(1,name);
             p.setString(2,firstName);
             p.setString(3,lastName);
             p.setString(4,country);
-            p.setString(5,cuty);
+            p.setString(5,city);
             p.setString(6,plz);
             p.setString(7,street);
             p.setString(8,email);
@@ -91,6 +99,7 @@ public class Login {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return true;
     }
 
 

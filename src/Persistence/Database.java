@@ -56,7 +56,7 @@ public class Database {
                     "  firstName varchar(64) NOT NULL ,\n" +
                     "  lastName varchar(64) NOT NULL ,\n" +
                     "  country varchar(64) NOT NULL ,\n" +
-                    "  cuty varchar(64) NOT NULL ,\n" +
+                    "  city varchar(64) NOT NULL ,\n" +
                     "  plz VARCHAR(8) NOT NULL ,\n" +
                     "  street varchar(64) NOT NULL,\n" +
                     "  email varchar(64) NOT NULL," +
