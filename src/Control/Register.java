@@ -20,7 +20,7 @@ public class Register extends javax.servlet.http.HttpServlet {
                     request.getParameter("email"),
                     request.getParameter("phone")
             )){
-                request
+                //request
             }else{
                 RequestDispatcher rd= request.getRequestDispatcher("/Register.jsp");
                 rd.include(request,response);

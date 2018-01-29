@@ -18,6 +18,7 @@
     <title>Startseite</title>
 </head>
 <body>
+<div class="colorchill">
 <div class="jumbotron">
     <div class="container text-center">
         <h1>oneLine</h1>
@@ -138,6 +139,6 @@
     <p>oneLine Shop Copyright</p>
 
 </footer>
-
+</div>
 </body>
 </html>

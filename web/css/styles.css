@@ -1,22 +1,45 @@
 .form-inline{
-    margin-bottom: 0;
     margin-top: 7px;
 }
 
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-    
-    /* Remove the jumbotron's default bottom margin */ 
-     .jumbotron {
-      margin-bottom: 0;
-    }
-   
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+    margin-bottom: 50px;
+    border: none;
+    border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+    margin-bottom: 0;
+    background: linear-gradient(#660066,#ffb3ff);
+    color: white;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+.btn_btn-success{
+    margin-right: 0;
+    float: right;
+}
+
+.colorchill {
+    background: linear-gradient(#ffb3ff, #660066);
+}
+
+footer{
+    background:#101010;
+    color: white;
+    height: 50px;
+}
+
+
+/*.btn_btn-success{
+    margin-right: 0;
+    float: right;
+}*/
 
