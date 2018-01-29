@@ -40,8 +40,8 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.html">Sale</a></li>
-                <li><a href="${pageContext.request.contextPath}/ProfileEdit.html">Profile</a></li>^
+                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+                <li><a href="${pageContext.request.contextPath}/ProfileEdit.jsp">Profile</a></li>^
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
