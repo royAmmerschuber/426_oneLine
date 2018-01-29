@@ -199,7 +199,10 @@ img.firmenlogo{
   left: 0;
   background-color: rgba(255,255,255,0.9);
 }
-
+small.headname{
+  color: white;
+  font-size: x-large;
+}
 .wrap-login100 {
   width: 500px;
   border-radius: 10px;

@@ -47,6 +47,7 @@
             </button>
             <a class="navbar-brand" href="#">Logo</a>
         </div>
+        <small class="headname">oneLine</small>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
