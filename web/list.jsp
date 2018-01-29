@@ -17,6 +17,7 @@
     <title>Startseite</title>
 </head>
 <body>
+<div class="colorchill">
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Online Store</h1>
@@ -110,6 +111,6 @@
     <p>Online Store Copyright</p>
 
 </footer>
-
+</div>
 </body>
 </html>
