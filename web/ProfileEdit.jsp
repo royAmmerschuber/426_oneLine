@@ -7,6 +7,7 @@
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
     <!--===============================================================================================-->
+
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
@@ -24,16 +25,59 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!--===============================================================================================-->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Startseite</title>
 </head>
+<div class="jumbotron">
+    <div class="container text-center">
+
+        <h1>Online Store</h1>
+        <p>Mission, Vission & Values</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <small class="one">oneLine</small>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="">Store</a></li>
+                <li><a href="Verkauf.html">Sell Product</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form class="form-inline">
+                        <input type="text" class="form-control" size="50" placeholder="Search...">
+                    </form>
+                </li>
+                <li><a href="ProfileEdit.html"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
 <body>
-<div class="colorchill">
-<button class="backbtn">Back</button>
 
 <div class="limiter">
-    <div class="container-login100" style="background-image: url('images/back.jpg');">
+    <div class="container-login100" style="background-image: url('images/baaaackground.jpg');">
+        <div class="clearfix"></div>
         <div class="wrap-login100">
             <form class="login100-form validate-form">
 					<span class="login100-form-logo">
@@ -46,53 +90,53 @@
                 <span class="undertitle">
 						Account
 					</span><br><br>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Name:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Name:</p>
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Firstname:</p><button class="editbtn">Edit</button>
-                </div>
-
-                <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                    <p class="ps">Username:</p><button class="editbtn">Edit</button>
-
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Firstname:</p>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Password:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Username:</p>
 
                 </div>
+
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Password:</p>
+
+                </div><button class="editbtn">Edit</button><br><br>
                 <span class="undertitle">
 						Contact Information
                 </span>
                 <br><br>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Email:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Email:</p>
 
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Phonenumber:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Phonenumber:</p>
 
-                </div>
+                </div><button class="editbtn">Edit</button><br><br>
                 <span class="undertitle">
 						Address Information
                 </span><br><br>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Country:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">Country:</p>
 
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">City:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">City:</p>
 
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">Street:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input" >
+                    <p class="ps">Street:</p>
 
                 </div>
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <p class="ps">PLZ:</p><button class="editbtn">Edit</button>
+                <div class="wrap-input100 validate-input">
+                    <p class="ps">PLZ:</p>
 
-                </div>
+                </div><button class="editbtn">Edit</button>
                 <div >
                     <button class="savbtn">Save Changes</button>
                 </div>
@@ -121,6 +165,6 @@
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
-</div>
+
 </body>
 </html>

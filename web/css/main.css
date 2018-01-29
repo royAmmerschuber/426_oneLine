@@ -45,6 +45,7 @@ body, html {
 button.editbtn{
   border-style: groove;
   border-radius: 100px;
+  font-size: large;
 }
 
 button.backbtn{
@@ -324,6 +325,7 @@ button.savbtn{
   border-style: groove;
   border-radius: 100px;
   margin-left: 150px;
+  font-size: large;
 }
 .focus-input100::after {
   font-family: Material-Design-Iconic-Font;
