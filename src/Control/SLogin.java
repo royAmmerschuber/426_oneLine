@@ -19,14 +19,14 @@ public class SLogin extends HttpServlet {
             values.put(pair[0],pair[1]);
         }
         //---------------------------------------------------------------
-        /*if(Login.check(values.get("username"),values.get("pass"))){
+        if(Login.check(values.get("username"),values.get("pass"))){
 
             HttpSession s=request.getSession();
             s.setAttribute("name",values.get("username"));
             response.sendRedirect("/Shop/Main");
         }else{
             request.getRequestDispatcher("/login.jsp").forward(request,response);
-        }*/
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
