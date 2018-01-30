@@ -11,7 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.   com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/diashow.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
@@ -19,42 +19,8 @@
 </head>
 <body>
 <div class="colorchill">
-<div class="jumbotron">
-    <div class="container text-center">
-        <h1>oneLine</h1>
-        <p>Egzon, Roy und Lucas</p>
-    </div>
-</div>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Logo</a>
-        </div>
-        <small class="headname">oneLine</small>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
-                <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
-                <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <form class="form-inline">
-                        <input type="text" class="form-control" size="50" placeholder="Search...">
-                    </form>
-                </li>
-                <li><a href="${pageContext.request.contextPath}/login.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<jsp:include page="header.jsp"/>
 
 <div class="container">
     <div class="row">
@@ -69,21 +35,21 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="images/mode.jpg" alt="Chania">
+                    <img src="${pageContext.request.contextPath}/images/mode.jpg" alt="Chania">
                     <div class="carousel-caption">
                         <h3>Price Fair</h3>
                     </div>
                 </div>
 
                 <div class="item">
-                    <img src="images/luxus.jpg" alt="Chicago">
+                    <img src="${pageContext.request.contextPath}/images/luxus.jpg" alt="Chicago">
                     <div class="carousel-caption">
                         <h3>Comfortable</h3>
                     </div>
                 </div>
 
                 <div class="item">
-                    <img src="images/juwelen.jpg" alt="New York">
+                    <img src="${pageContext.request.contextPath}/images/juwelen.jpg" alt="New York">
                     <div class="carousel-caption">
                         <h3>Easy</h3>
                     </div>
