@@ -15,6 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/diashow.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Startseite</title>
 </head>
 <body>
@@ -41,7 +42,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
                 <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
             </ul>
             <ul class="nav navbar-nav navbar-right">

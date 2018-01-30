@@ -39,14 +39,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Logo</a>
+					<small class="headname">oneLine</small>
 				</div>
 				<small class="headname">oneLine</small>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
 						<li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-						<li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+						<li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
 						<li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -88,7 +88,9 @@
 							Login
 						</button>
 					</div>
-
+					<br>
+					<small class="signup">or sign up here</small><br>
+					<a class="" href="/Auth/Register">Create Account</a>
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
 							Forgot Password?

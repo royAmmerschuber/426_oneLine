@@ -34,7 +34,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
                 <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -90,7 +90,6 @@
 
             <div class="section" style="padding-bottom:20px;">
                 <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> publish Product</button>
-                <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Agregar a lista de deseos</a></h6>
             </div>
         </div>
 
