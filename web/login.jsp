@@ -25,7 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css"
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -39,7 +39,6 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Logo</a>
 				</div>
 				<small class="headname">oneLine</small>
 				<div class="collapse navbar-collapse" id="myNavbar">

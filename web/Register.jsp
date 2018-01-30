@@ -45,9 +45,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <small class="headname">oneLine</small>
         </div>
-        <small class="headname">oneLine</small>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
@@ -68,7 +67,7 @@
 </nav>
 
 <div class="limiter">
-    <div class="container-login100"">
+    <div class="container-login100">
         <div class="wrap-login100">
             <form class="login100-form validate-form" action="/Auth/Register" method="post">
 					<span class="login100-form-logo">
