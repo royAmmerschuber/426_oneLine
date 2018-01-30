@@ -1,10 +1,6 @@
 package Control;
 
 import Persistence.Database;
-import com.mysql.jdbc.Connection;
-
-
-import javax.crypto.EncryptedPrivateKeyInfo;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -63,14 +59,13 @@ public class Login {
                                String country,String city,String plz,String street,String email,String phone){
 
         try {
-            PreparedStatement p;
-            p=Database.getConnection().prepareStatement("select count(*) from User WHERE userName=?");
+            PreparedStatement p;/*=Database.getConnection().prepareStatement("select count(*) from User WHERE userName=?");
             p.setString(1,name);
             ResultSet rs=p.executeQuery();
             rs.next();
             if(rs.getInt(1)!=0){
                 return false;
-            }
+            }*/
             p=Database.getConnection().prepareStatement(
                     "INSERT INTO User (userName,password,salt) VALUES (?,?,?);");
             String salt="";

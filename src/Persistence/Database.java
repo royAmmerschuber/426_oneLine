@@ -5,19 +5,19 @@ import Control.Login;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import java.sql.SQLException;
 import java.util.Properties;
+import com.mysql.cj.jdbc.Driver;
 
 public class Database {
     private static Connection con;
-    public static Connection getConnection  (){
+    public static Connection getConnection(){
         if(con ==null){
             try {
-                Properties p= new Properties();
-                p.load(new FileInputStream("src/config/database.prop"));
-                Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection(p.getProperty("url"),p.getProperty("user"),p.getProperty("password"));
+                /*Properties p= new Properties();
+                p.load(new FileInputStream("database.prop"));*/
+                Class.forName("com.mysql.cj.jdbc.Driver");//com.mysql.jdbc.Driver
+                con = DriverManager.getConnection(/*p.getProperty("url"),p.getProperty("user"),p.getProperty("password")*/"jdbc:mysql://localhost:3306/426?useLegacyDatetimeCode=false&serverTimezone=America/New_York","root","");
 
             }catch (Exception e){
                 e.printStackTrace();
