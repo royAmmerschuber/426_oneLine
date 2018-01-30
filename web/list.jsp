@@ -1,3 +1,6 @@
+<%@ page import="Persistence.Database" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
 <%--
   Created by IntelliJ IDEA.
   User: vmadmin
@@ -18,45 +21,39 @@
 </head>
 <body>
 <div class="colorchill">
-<div class="jumbotron">
-    <div class="container text-center">
-        <h1>Online Store</h1>
-        <p>Mission, Vission & Values</p>
-    </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <small class="headname">oneLine</small>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
-                <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
-                <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <form class="form-inline">
-                        <input type="text" class="form-control" size="50" placeholder="Search...">
-                    </form>
-                </li>
-                <li><a href="${pageContext.request.contextPath}/login.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+    <jsp:include page="header.jsp"/>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-4">
+        <%!
+            private String generateElems() {
+                StringBuilder s= new StringBuilder();
+                try {
+                    PreparedStatement p = Database.getConnection().prepareStatement("SELECT name,price,description FROM product WHERE amount>0");
+                    ResultSet rs=p.executeQuery();
+                    while(rs.next()){
+                        s.append(generateElem(rs.getString(1),rs.getString(2),rs.getString(3)));
+                    }
+                }catch (Exception e){
+                    return e.toString();
+                }
+                return s.toString();
+            }
+
+            String generateElem(String name,String price,String desc){
+                String s="<div class=\"col-sm-4\">";
+                s+="<div class=\"panel panel-primary\">";
+                s+="<div class=\"panel-heading\">"+name+"</div>";
+                s+="<div class=\"panel-body\"><img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\"></div>";
+                s+="<div class=\"panel-footer\">Preis: "+price+"CHF<br>";
+                s+="</div></div></div>";
+                return s;
+            }
+        %>
+        <%
+            out.println(generateElems());
+        %>
+        <%--<div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">BLACK FRIDAY DEAL</div>
                 <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
@@ -77,35 +74,12 @@
                 <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
-        </div>
+        </div>--%>
     </div>
 </div><br>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-            </div>
-        </div>
-    </div>
-</div><br><br>
+
+<br><br>
 
 <footer class="container-fluid text-center">
     <p>Online Store Copyright</p>

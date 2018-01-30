@@ -35,46 +35,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Startseite</title>
 </head>
-<div class="jumbotron">
-    <div class="container text-center">
-
-        <h1>Online Store</h1>
-        <p>Mission, Vission & Values</p>
-    </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <small class="one">oneLine</small>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="">Store</a></li>
-                <li><a href="Verkauf.html">Sell Product</a></li>
-                <li><a href="#">Profile</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <form class="form-inline">
-                        <input type="text" class="form-control" size="50" placeholder="Search...">
-                    </form>
-                </li>
-                <li><a href="ProfileEdit.html"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
 <body>
-
+<jsp:include page="header.jsp"/>
 <div class="limiter">
     <div class="container-login100" style="background-image: url('images/baaaackground.jpg');">
         <div class="clearfix"></div>

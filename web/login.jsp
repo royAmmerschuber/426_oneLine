@@ -31,35 +31,7 @@
 <body>
 	<div class="colorchill">
 
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<small class="headname">oneLine</small>
-				</div>
-				<small class="headname">oneLine</small>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
-						<li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-						<li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
-						<li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<form class="form-inline">
-								<input type="text" class="form-control" size="50" placeholder="Search...">
-							</form>
-						</li>
-						<li><a href="${pageContext.request.contextPath}/login.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+		<jsp:include page="header.jsp"/>
 
 	<div class="limiter">
 		<div class="container-login100" >
@@ -88,9 +60,7 @@
 							Login
 						</button>
 					</div>
-					<br>
-					<small class="signup">or sign up here</small><br>
-					<a class="" href="/Auth/Register">Create Account</a>
+
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
 							Forgot Password?

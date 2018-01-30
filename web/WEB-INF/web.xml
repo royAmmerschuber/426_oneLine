@@ -21,6 +21,7 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Auth/Login</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>SMain</servlet-name>
         <servlet-class>Control.SMain</servlet-class>
@@ -28,5 +29,23 @@
     <servlet-mapping>
         <servlet-name>SMain</servlet-name>
         <url-pattern>/Shop/Main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SList</servlet-name>
+        <servlet-class>Control.SList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SList</servlet-name>
+        <url-pattern>/Shop/List</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SSell</servlet-name>
+        <servlet-class>Control.SSell</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SSell</servlet-name>
+        <url-pattern>/Shop/Sell</url-pattern>
     </servlet-mapping>
 </web-app>
