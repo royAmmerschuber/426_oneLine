@@ -19,9 +19,11 @@ public class SLogin extends HttpServlet {
             values.put(pair[0],pair[1]);
         }
         //---------------------------------------------------------------
-        if(Login.check(values.get("username"),values.get("pass"))){
+        int x=Login.check(values.get("username"),values.get("pass"));
+        if(x<1){
 
             HttpSession s=request.getSession();
+            s.setAttribute("id",Integer.toString(x));
             s.setAttribute("name",values.get("username"));
             response.sendRedirect("/Shop/Main");
         }else{

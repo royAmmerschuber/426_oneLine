@@ -34,7 +34,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
                 <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -54,12 +54,11 @@
             <img style="max-width:100%;" src="images/product.jpg" />
         </div>
         <div class="col-xs-5" style="border:0px solid gray">
-            <!-- Datos del vendedor y titulo del producto -->
             <h3>Add a new Product</h3><br>
             <h5 style="color:#337ab7">add Product name:</h5>
             <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
 
-            <!-- Precios --><br><br>
+            <br><br>
             <h5 style="color:#337ab7">set Price:</h5>
             <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
 
@@ -70,7 +69,6 @@
             <div class="textareaa">
                 <textarea class="form-control" id="product_description" name="product_description"></textarea>
             </div>
-            <!-- Detalles especificos del producto -->
             <div class="section">
                 <h6 class="title-attr" style="margin-top:15px;" ></h6>
                 <div>
@@ -84,16 +82,12 @@
             <div class="section" style="padding-bottom:20px;">
                 <h5 style="color:#337ab7">Amount </h5>
                 <div>
-                    <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                    <input value="1" />
-                    <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                    <input type="number" value="1" />
                 </div>
             </div>
 
-            <!-- Botones de compra -->
             <div class="section" style="padding-bottom:20px;">
                 <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> publish Product</button>
-                <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Agregar a lista de deseos</a></h6>
             </div>
         </div>
 

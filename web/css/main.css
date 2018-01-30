@@ -67,6 +67,13 @@ a:focus {
 	outline: none !important;
 }
 
+small.signup{
+    margin-left: 150px;
+}
+button.signup{
+    margin-left: 130px;
+}
+
 a:hover {
 	text-decoration: none;
   color: #fff;
@@ -204,6 +211,9 @@ small.headname{
   color: white;
   font-size: x-large;
 }
+
+
+
 .wrap-login100 {
   width: 500px;
   border-radius: 10px;

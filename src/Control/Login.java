@@ -31,31 +31,31 @@ public class Login {
         return generatedPassword;
     }
 
-    public static boolean check(String name,String password){
+    public static int check(String name,String password){
         java.sql.Connection c= Database.getConnection();
         try {
 
-            PreparedStatement p=c.prepareStatement("SELECT password,salt from User where userName=?");
+            PreparedStatement p=c.prepareStatement("SELECT password,salt, id from User where userName=?");
             p.setString(1,name);
             ResultSet rs=p.executeQuery();
             if(rs.next()){
                 if(getHash(password, rs.getString(2)).equals(rs.getString(1))){
-                    return true;
+                    return rs.getInt(3);
                 }
 
             }else{
-                return false;
+                return -1;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return -1;
 
         }
-        return false;
+        return -1;
     }
 
-    public static boolean addUser(String name, String password,String firstName,String lastName,
+    public static int addUser(String name, String password,String firstName,String lastName,
                                String country,String city,String plz,String street,String email,String phone){
 
         try {
@@ -94,7 +94,7 @@ public class Login {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return 1;
     }
 
 
