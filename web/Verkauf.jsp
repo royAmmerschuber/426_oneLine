@@ -82,9 +82,7 @@
             <div class="section" style="padding-bottom:20px;">
                 <h5 style="color:#337ab7">Amount </h5>
                 <div>
-                    <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                    <input value="1" />
-                    <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                    <input type="number" value="1" />
                 </div>
             </div>
 
