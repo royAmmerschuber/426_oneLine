@@ -7,7 +7,6 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -25,12 +24,45 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css"
 <!--===============================================================================================-->
 </head>
 <body>
 	<div class="colorchill">
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Logo</a>
+				</div>
+				<small class="headname">oneLine</small>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+						<li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
+						<li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+						<li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<form class="form-inline">
+								<input type="text" class="form-control" size="50" placeholder="Search...">
+							</form>
+						</li>
+						<li><a href="${pageContext.request.contextPath}/login.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/login.jpg');">
+		<div class="container-login100" >
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-logo">
@@ -86,6 +118,10 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<footer class="container-fluid text-center">
+		<p>oneLine Shop Copyright</p>
 
+	</footer>
+	</div>
 </body>
 </html>

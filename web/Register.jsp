@@ -47,12 +47,13 @@
             </button>
             <a class="navbar-brand" href="#">Logo</a>
         </div>
+        <small class="headname">oneLine</small>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Store</a></li>
-                <li><a href="#">Sale</a></li>
-                <li><a href="#">Profile</a></li>^
+                <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
+                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sale</a></li>
+                <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -60,7 +61,7 @@
                         <input type="text" class="form-control" size="50" placeholder="Search...">
                     </form>
                 </li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                <li><a href="${pageContext.request.contextPath}/login.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
             </ul>
         </div>
     </div>
