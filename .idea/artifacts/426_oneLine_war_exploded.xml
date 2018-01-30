@@ -1,11 +1,15 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="426_oneLine:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="426_oneLine:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/426_oneLine_war_exploded</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="426_oneLine/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="426_oneLine" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.osgi.core-6.0.0" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:8.0.8-dmr" />
         </element>
       </element>
     </root>

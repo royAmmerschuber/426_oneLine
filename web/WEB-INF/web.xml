@@ -8,10 +8,17 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>Control.Register</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Auth/Register</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Control.SLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Auth/Login</url-pattern>
+    </servlet-mapping>
 </web-app>
