@@ -21,4 +21,12 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Auth/Login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SMain</servlet-name>
+        <servlet-class>Control.SMain</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SMain</servlet-name>
+        <url-pattern>/Shop/Main</url-pattern>
+    </servlet-mapping>
 </web-app>
