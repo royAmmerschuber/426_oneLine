@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <title>Startseite</title>
 </head>
 <body>
@@ -26,10 +26,15 @@
 <div class="container">
     <div class="row">
         <%!
-            private String generateElems() {
+            private String generateElems(String search) {
+                if(search==null){
+                    search="";
+                }
                 StringBuilder s= new StringBuilder();
                 try {
-                    PreparedStatement p = Database.getConnection().prepareStatement("SELECT name,price,description FROM product WHERE amount>0");
+                    PreparedStatement p = Database.getConnection().prepareStatement("SELECT name,price,description FROM product WHERE amount>0 AND name REGEXP ? OR description REGEXP ?");
+                    p.setString(1,search);
+                    p.setString(2,search);
                     ResultSet rs=p.executeQuery();
                     while(rs.next()){
                         s.append(generateElem(rs.getString(1),rs.getString(2),rs.getString(3)));
@@ -38,6 +43,7 @@
                     return e.toString();
                 }
                 return s.toString();
+
             }
 
             String generateElem(String name,String price,String desc){
@@ -51,7 +57,7 @@
             }
         %>
         <%
-            out.println(generateElems());
+            out.println(generateElems(request.getParameter("search")));
         %>
         <%--<div class="col-sm-4">
             <div class="panel panel-primary">

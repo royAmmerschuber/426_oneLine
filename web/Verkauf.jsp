@@ -7,88 +7,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
     <title>One Line Sell</title>
 </head>
 <body>
 <div class="colorchill">
-<div class="jumbotron">
-    <div class="container text-center">
-        <h1>Online Store</h1>
-        <p>Mission, Vission & Values</p>
-    </div>
-</div>
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <small class="headname">oneLine</small>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
-                <li><a href="${pageContext.request.contextPath}/list.jsp">Store</a></li>
-                <li><a href="${pageContext.request.contextPath}/Verkauf.jsp">Sell Product</a></li>
-                <li><a href="${pageContext.request.contextPath}/Register.jsp">Profile</a></li>^
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <form class="form-inline">
-                        <input type="text" class="form-control" size="50" placeholder="Search...">
-                    </form>
-                </li>
-                <li><a href="${pageContext.request.contextPath}/login.jsp"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<jsp:include page="header.jsp"/>
 <div class="container">
     <div class="row">
         <div class="col-xs-4 item-photo">
-            <img style="max-width:100%;" src="images/product.jpg" />
+            <img style="max-width:100%;" src="${pageContext.request.contextPath}/images/product.jpg" />
         </div>
         <div class="col-xs-5" style="border:0px solid gray">
-            <h3>Add a new Product</h3><br>
-            <h5 style="color:#337ab7">add Product name:</h5>
-            <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
+            <form action="/Shop/Sell" method="post">
+                <h3>Add a new Product</h3><br>
+                <h5 style="color:#337ab7">add Product name:</h5>
+                <input id="product_name" name="product_weight" placeholder="PRODUCT NAME" class="inputfields" required="" type="text">
 
-            <br><br>
-            <h5 style="color:#337ab7">set Price:</h5>
-            <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
+                <br><br>
+                <h5 style="color:#337ab7">set Price:</h5>
+                <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
 
-            <br><br>
-            <h5 style="color:#337ab7">add Image</h5><br>
-            <input id="filebutton" name="filebutton" class="input-file" type="file"><br><br>
-            <h5 style="color:#337ab7">add a Description</h5>
-            <div class="textareaa">
-                <textarea class="form-control" id="product_description" name="product_description"></textarea>
-            </div>
-            <div class="section">
-                <h6 class="title-attr" style="margin-top:15px;" ></h6>
-                <div>
-                    <div class="attr" style="width:25px;background:#5a5a5a;"></div>
-                    <div class="attr" style="width:25px;background:white;"></div>
+                <br><br>
+                <h5 style="color:#337ab7">add Image</h5><br>
+                <input id="filebutton" name="filebutton" class="input-file" type="file"><br><br>
+                <h5 style="color:#337ab7">add a Description</h5>
+                <div class="textareaa">
+                    <textarea class="form-control" id="product_description" name="product_description"></textarea>
                 </div>
-            </div>
-            <div class="section" style="padding-bottom:5px;">
-
-            </div>
-            <div class="section" style="padding-bottom:20px;">
-                <h5 style="color:#337ab7">Amount </h5>
-                <div>
-                    <input type="number" value="1" />
+                <div class="section">
+                    <h6 class="title-attr" style="margin-top:15px;" ></h6>
+                    <div>
+                        <div class="attr" style="width:25px;background:#5a5a5a;"></div>
+                        <div class="attr" style="width:25px;background:white;"></div>
+                    </div>
                 </div>
-            </div>
+                <div class="section" style="padding-bottom:5px;">
 
-            <div class="section" style="padding-bottom:20px;">
-                <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> publish Product</button>
-            </div>
+                </div>
+                <div class="section" style="padding-bottom:20px;">
+                    <h5 style="color:#337ab7">Amount </h5>
+                    <div>
+                        <input type="number" value="1" />
+                    </div>
+                </div>
+
+                <div class="section" style="padding-bottom:20px;">
+                    <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> publish Product</button>
+                </div>
+            </form>
         </div>
 
 
