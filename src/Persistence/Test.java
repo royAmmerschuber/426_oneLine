@@ -10,6 +10,6 @@ public class Test {
         System.out.println(Login.check("nuberOne","gibbiX12345"));
         System.out.println(Login.check("numberOne","gibeiX12345"));
         System.out.println(Login.check("numberOne","gibbi345"));
-        System.out.println(Verkauf.addProduct("GummiDildo",122, "blablabladeepthroatblablabla", 4));
+        System.out.println(Verkauf.addProduct("Pingu",122, "blablabladeepthroatblablabla", 4));
     }
 }

@@ -32,4 +32,6 @@ public class Verkauf {
         }
         return true;
     }
+
+
 }
