@@ -26,18 +26,27 @@
 <div class="container">
     <div class="row">
         <%!
-            private String generateElems(String search) {
+            private String generateElems(String search,String base) {
                 if(search==null){
                     search="";
                 }
                 StringBuilder s= new StringBuilder();
                 try {
-                    PreparedStatement p = Database.getConnection().prepareStatement("SELECT name,price,description FROM product WHERE amount>0 AND lower(name) REGEXP lower(?) OR description REGEXP ?");
+                    PreparedStatement p = Database.getConnection().prepareStatement(
+                            "SELECT p.name,p.price,p.id,i.image FROM product as p " +
+                            "left join image as i on i.productFK=p.id " +
+                            "WHERE amount>0 AND lower(name) REGEXP lower(?) OR lower(description) REGEXP lower(?)");
                     p.setString(1,search);
                     p.setString(2,search);
                     ResultSet rs=p.executeQuery();
+                    String path;
                     while(rs.next()){
-                        s.append(generateElem(rs.getString(1),rs.getString(2),rs.getString(3)));
+                        if(rs.getString(4)!=null) {
+                            path = base + "/images/products/" + rs.getString(4);
+                        }else{
+                            path="https://placehold.it/150x80?text=IMAGE";
+                        }
+                        s.append(generateElem(rs.getString(1),rs.getString(2),rs.getInt(3),path));
                     }
                 }catch (Exception e){
                     return e.toString();
@@ -46,18 +55,20 @@
 
             }
 
-            String generateElem(String name,String price,String desc){
-                String s="<div class=\"col-sm-4\">";
+            private String generateElem(String name,String price,int id,String image){
+                String s="";
+                s+="<div class=\"col-sm-4\">";
                 s+="<div class=\"panel panel-primary\">";
                 s+="<div class=\"panel-heading\">"+name+"</div>";
-                s+="<div class=\"panel-body\"><img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\"></div>";
+                s+="<a href='/Shop/Details?id="+id+"'><div class=\"panel-body\"><img src=\""+image+"\" class=\"img-responsive\" alt=\"Image\"></div></a>";
                 s+="<div class=\"panel-footer\">Preis: "+price+"CHF<br>";
+                s+="<form action='/Shop/Buy?id="+id+"'><input type=\"number\" class='sell_amount' value='1' name=\"amount\"><button type=\"button\" class=\"btn btn-success\">Buy</button></form>";
                 s+="</div></div></div>";
                 return s;
             }
         %>
         <%
-            out.println(generateElems(request.getParameter("search")));
+            out.println(generateElems(request.getParameter("search"),request.getContextPath()));
         %>
         <%--<div class="col-sm-4">
             <div class="panel panel-primary">
@@ -81,6 +92,7 @@
                 <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
             </div>
         </div>--%>
+
     </div>
 </div><br>
 

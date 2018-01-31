@@ -1,4 +1,7 @@
-<%--
+<%@ page import="Persistence.Database" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: vmadmin
   Date: 31.01.2018
@@ -25,42 +28,62 @@
 <body>
 <div class="colorchill">
     <jsp:include page="header.jsp"/>
+    <%
+        ResultSet rs=null;
+        try {
+            PreparedStatement p=Database.getConnection().prepareStatement(
+                    "SELECT p.name,p.amount,p.description,p.price,u.userName,c.name,i.image FROM product AS p \n" +
+                    "\tLEFT JOIN user AS u ON u.id=p.sellerFK\n" +
+                    "    LEFT JOIN category AS c ON c.id=p.categoryFK\n" +
+                    "Left Join image as i on p.id=i.productFK"+
+                    "    WHERE p.id=?");
+            p.setInt(1,Integer.parseInt(request.getParameter("id")));
+            rs=p.executeQuery();
+            rs.next();
+            String x;
+            for(int i=1;i<=7;i++){
+                x=rs.getString(i);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    %>
 <div class="container">
     <div class="row">
         <div class="col-xs-4 item-photo">
-            <img style="max-width:100%;" src="https://placehold.it/150x80?text=IMAGE" />
+            <img style="max-width:100%;" src="${pageContext.request.contextPath}/images/products/<%try{out.print(rs.getString(7));}catch (Exception e){e.printStackTrace();}%>" />
         </div>
         <div class="col-xs-5">
             <!-- Datos del vendedor y titulo del producto -->
-            <h3 style="color: white">Samsung Galaxy S4 I337 16GB 4G LTE Unlocked GSM Android Cell Phone</h3>
+            <h3 style="color: white"><%try{out.print(rs.getString(1));}catch (Exception e){e.printStackTrace();}%></h3>
             <!-- Precios -->
             <h4  style="color: black;"><small>Price</small></h4>
-            <h6 style="margin-top:0px; color: white;">€ 399.00</h6>
+            <h6 style="margin-top:0px; color: white;"><%try{out.print(rs.getString(4));}catch (Exception e){e.printStackTrace();}%></h6>
 
             <h4  style="color: black;"><small>Seller</small></h4>
-            <h6 style="margin-top:0px; color: white;">Martin</h6>
+            <h6 style="margin-top:0px; color: white;"><%try{out.print(rs.getString(5));}catch (Exception e){e.printStackTrace();}%></h6>
 
             <!-- Detalles especificos del producto -->
             <div class="section" style="padding-bottom:20px;">
                 <h4 class="title-attr" style="color: black;"><small>Menge</small></h4>
                 <div>
-                    <input value="1" />
+                    <form>
+                        <input value="1" type="number" class="sell_amount"/>/<%try{out.print(rs.getString(2));}catch (Exception e){e.printStackTrace();}%>
+                        <button class="btn btn-success">Buy</button>
+                    </form>
                 </div>
             </div>
 
-            <!-- Botones de compra -->
-            <div class="section" style="padding-bottom:20px;">
-                <button class="btn btn-success">Buy</button>
-            </div>
         </div>
 
         <div class="col-xs-9">
-            <ul class="menu-items" style="color: white">Fish
+            <ul class="menu-items" style="color: white"><%try{out.print(rs.getString(6));}catch (Exception e){e.printStackTrace();}%>
             </ul>
             <div style="width:100%;border-top:1px solid silver">
                 <p style="padding:15px;">
                     <small style="color: white">
-                        beschreibung
+                        <%try{out.print(rs.getString(3));}catch (Exception e){e.printStackTrace();}%>
                     </small>
                 </p>
             </div>

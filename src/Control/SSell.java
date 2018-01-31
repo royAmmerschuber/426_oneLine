@@ -16,7 +16,7 @@ import java.util.HashMap;
 @WebServlet(name = "SSell")
 @MultipartConfig
 public class SSell extends HttpServlet {
-    private final String IMAGE_PATH = "C:\\images";
+    private final String IMAGE_PATH = "/images/products/";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*HashMap<String,String> values=new HashMap<>();
         BufferedReader r=request.getReader();
@@ -34,7 +34,8 @@ public class SSell extends HttpServlet {
         OutputStream out=null;
         InputStream in=null;
         try{
-            out=new FileOutputStream(new File(IMAGE_PATH+File.separator+filename));
+            String x=request.getRealPath("/");
+            out=new FileOutputStream(new File(x+IMAGE_PATH+File.separator+filename));
             in=file.getInputStream();
             int read;
             byte[] b=new byte[1024];
@@ -51,7 +52,7 @@ public class SSell extends HttpServlet {
         if(in!=null){
             in.close();
         }
-        Verkauf.addProduct(
+        int id=Verkauf.addProduct(
                 request.getParameter("name"),
                 Integer.parseInt(request.getParameter("amount")),
                 request.getParameter("descr"),
@@ -59,6 +60,7 @@ public class SSell extends HttpServlet {
                 (int)request.getSession().getAttribute("id"),
                 "Fish",
                 filename);
+        response.sendRedirect("/Shop/Details?id="+id);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

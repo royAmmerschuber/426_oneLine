@@ -70,7 +70,8 @@ public class Database {
                     "  name varchar(64) NOT NULL ,\n" +
                     "  amount int NOT NULL ,\n" +
                     "  description VARCHAR(2048) NOT NULL ,\n" +
-                    "  price DECIMAL(10,2) NOT NULL\n" +
+                    "  price DECIMAL(10,2) NOT NULL,\n" +
+                    "  discPrice DECIMAL(10,2)" +
                     ");");
             con.createStatement().executeUpdate(
                     "CREATE TABLE Image(\n" +
