@@ -19,7 +19,7 @@
             <%--<small class="headname">oneLine</small>--%>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/Shop/Main">Home</a></li>
+                    <li><a href="/Shop/Main">Home</a></li>
                     <li><a href="/Shop/List">Store</a></li>
                     <li><a href="/Shop/Sell">Sale</a></li>
                     <li><a href="/Auth/Register">Profile</a></li>^
