@@ -6,25 +6,26 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Verkauf {
-    public static boolean addProduct( String name, int amount,String description, int price){
+    public static boolean addProduct( String name, int amount,String description, float price, int userId,String category,String image){
 
         try {
-            PreparedStatement p;/*=Database.getConnection().prepareStatement("select count(*) from User WHERE userName=?");
-            p.setString(1,name);
-            ResultSet rs=p.executeQuery();
-            rs.next();
-            if(rs.getInt(1)!=0){
-                return false;
-            }*/
-            p= Database.getConnection().prepareStatement(
-                    "INSERT INTO product ( name,amount,description, price) VALUES (?,?,?,?);");
-
+            PreparedStatement p= Database.getConnection().prepareStatement(
+                    "INSERT INTO product ( name,amount,description, price,sellerFK,categoryFK) VALUES " +
+                            "(?,?,?,?,?,(SELECT  id from Category where name=?));");
             p.setString(1,name);
             p.setInt(2,amount);
             p.setString(3,description);
-            p.setInt(4,price);
-
-
+            p.setFloat(4,price);
+            p.setInt(5,userId);
+            p.setString(6,category);
+            p.execute();
+            p=Database.getConnection().prepareStatement(
+                    "INSERT INTO image (productFK,image) VALUES " +
+                            "((select id FROM product where name=? and description=? and sellerFK=? ORDER BY id DESC LIMIT 1),?)");
+            p.setString(1,name);
+            p.setString(2,description);
+            p.setInt(3,userId);
+            p.setString(4,image);
             p.execute();
 
         } catch (SQLException e) {

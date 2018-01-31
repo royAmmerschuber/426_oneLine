@@ -30,7 +30,12 @@
                             <input type="text" class="form-control" name="search" size="50" placeholder="Search...">
                         </form>
                     </li>
-                    <li><a href="/Auth/Login"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                    <li><a href="/Auth/Login"><span class="glyphicon glyphicon-user"></span> <%
+                    if(session.getAttribute("name")==null){
+                        out.print("Login");
+                    }else{
+                        out.print(session.getAttribute("name"));
+                    }%></a></li>
                 </ul>
             </div>
         </div>

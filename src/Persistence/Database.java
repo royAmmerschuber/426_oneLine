@@ -47,7 +47,7 @@ public class Database {
                     "  userName VARCHAR(64) NOT NULL ,\n" +
                     "  password VARCHAR(128) NOT NULL ,\n" +
                     "  salt VARCHAR(128) NOT NULL ,"+
-                    "  image VARCHAR(128)\n" +
+                    "  image VARCHAR(512)\n" +
                     ");");
             con.createStatement().executeUpdate(
                     "CREATE TABLE Address(\n" +
@@ -76,7 +76,7 @@ public class Database {
                     "CREATE TABLE Image(\n" +
                     "  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,\n" +
                     "  productFK int NOT NULL ,\n" +
-                    "  image VARCHAR(128) NOT NULL\n" +
+                    "  image VARCHAR(512) NOT NULL\n" +
                     ");");
             con.createStatement().executeUpdate(
                     "CREATE TABLE Category(\n" +

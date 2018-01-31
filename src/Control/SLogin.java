@@ -20,10 +20,10 @@ public class SLogin extends HttpServlet {
         }
         //---------------------------------------------------------------
         int x=Login.check(values.get("username"),values.get("pass"));
-        if(x<1){
+        if(x>0){
 
             HttpSession s=request.getSession();
-            s.setAttribute("id",Integer.toString(x));
+            s.setAttribute("id",x);
             s.setAttribute("name",values.get("username"));
             response.sendRedirect("/Shop/Main");
         }else{
