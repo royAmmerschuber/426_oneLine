@@ -21,13 +21,13 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/Shop/Main">Home</a></li>
                     <li><a href="/Shop/List">Store</a></li>
-                    <li><a href="/Shop/Verkauf">Sale</a></li>
+                    <li><a href="/Shop/Sell">Sale</a></li>
                     <li><a href="/Auth/Register">Profile</a></li>^
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <form class="form-inline">
-                            <input type="text" class="form-control" size="50" placeholder="Search...">
+                        <form class="form-inline" action="/Shop/List">
+                            <input type="text" class="form-control" name="search" size="50" placeholder="Search...">
                         </form>
                     </li>
                     <li><a href="/Auth/Login"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
