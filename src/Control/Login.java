@@ -55,7 +55,7 @@ public class Login {
         return -1;
     }
 
-    public static int addUser(String name, String password,String firstName,String lastName,
+    public static boolean addUser(String name, String password,String firstName,String lastName,
                                String country,String city,String plz,String street,String email,String phone){
 
         try {
@@ -93,8 +93,9 @@ public class Login {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
-        return 1;
+        return true;
     }
 
 

@@ -32,7 +32,7 @@
                 }
                 StringBuilder s= new StringBuilder();
                 try {
-                    PreparedStatement p = Database.getConnection().prepareStatement("SELECT name,price,description FROM product WHERE amount>0 AND name REGEXP ? OR description REGEXP ?");
+                    PreparedStatement p = Database.getConnection().prepareStatement("SELECT name,price,description FROM product WHERE amount>0 AND lower(name) REGEXP lower(?) OR description REGEXP ?");
                     p.setString(1,search);
                     p.setString(2,search);
                     ResultSet rs=p.executeQuery();

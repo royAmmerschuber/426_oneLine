@@ -20,21 +20,21 @@
             <img style="max-width:100%;" src="${pageContext.request.contextPath}/images/product.jpg" />
         </div>
         <div class="col-xs-5" style="border:0px solid gray">
-            <form action="/Shop/Sell" method="post">
+            <form action="/Shop/Sell" method="post" enctype="multipart/form-data">
                 <h3>Add a new Product</h3><br>
                 <h5 style="color:#337ab7">add Product name:</h5>
-                <input id="product_name" name="product_weight" placeholder="PRODUCT NAME" class="inputfields" required="" type="text">
+                <input id="product_name" name="name" placeholder="PRODUCT NAME" class="inputfields" required="" type="text">
 
                 <br><br>
                 <h5 style="color:#337ab7">set Price:</h5>
-                <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
+                <input id="product_weight" name="price" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
 
                 <br><br>
                 <h5 style="color:#337ab7">add Image</h5><br>
-                <input id="filebutton" name="filebutton" class="input-file" type="file"><br><br>
+                <input id="filebutton" name="image" class="input-file" type="file"><br><br>
                 <h5 style="color:#337ab7">add a Description</h5>
                 <div class="textareaa">
-                    <textarea class="form-control" id="product_description" name="product_description"></textarea>
+                    <textarea class="form-control" id="product_description" name="descr"></textarea>
                 </div>
                 <div class="section">
                     <h6 class="title-attr" style="margin-top:15px;" ></h6>
@@ -49,7 +49,7 @@
                 <div class="section" style="padding-bottom:20px;">
                     <h5 style="color:#337ab7">Amount </h5>
                     <div>
-                        <input type="number" value="1" />
+                        <input type="number" name="amount" value="1" />
                     </div>
                 </div>
 
