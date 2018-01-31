@@ -59,7 +59,9 @@
 						<button class="login100-form-btn">
 							Login
 						</button>
-					</div>
+					</div><br>
+					<small class="signup">or sign up here</small><br>
+					<button class="signup"> create Account</button>
 
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
