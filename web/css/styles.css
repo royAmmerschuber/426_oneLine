@@ -37,6 +37,13 @@ footer{
     height: 50px;
 }
 
+h4{
+    color: black;
+}
+
+h6{
+    color: black;
+}
 
 /*.btn_btn-success{
     margin-right: 0;
