@@ -22,7 +22,12 @@
                     <li><a href="/Shop/Main">Home</a></li>
                     <li><a href="/Shop/List">Store</a></li>
                     <li><a href="/Shop/Sell">Sale</a></li>
-                    <li><a href="/Auth/Register">Profile</a></li>^
+                    <%
+                        if (request.getSession().getAttribute("id")!=null){
+                            out.print("<li><a href=\"/Auth/Login?logout=true\">Logout</a></li>");
+                        }
+                    %>
+                    <%--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^--%>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>

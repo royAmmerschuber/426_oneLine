@@ -62,7 +62,10 @@
                 s+="<div class=\"panel-heading\">"+name+"</div>";
                 s+="<a href='/Shop/Details?id="+id+"'><div class=\"panel-body\"><img src=\""+image+"\" class=\"img-responsive\" alt=\"Image\"></div></a>";
                 s+="<div class=\"panel-footer\">Preis: "+price+"CHF<br>";
-                s+="<form action='/Shop/Buy?id="+id+"'><input type=\"number\" class='sell_amount' value='1' name=\"amount\"><button type=\"button\" class=\"btn btn-success\">Buy</button></form>";
+                s+="<form action=\"/Shop/Buy\">";
+                s+="<input value=\"1\" type=\"number\" name=amount class=\"sell_amount\"/>";
+                s+="<button class='btn btn-success' name='id' value='"+id+"'>Buy</button>";
+                s+="</form>";
                 s+="</div></div></div>";
                 return s;
             }

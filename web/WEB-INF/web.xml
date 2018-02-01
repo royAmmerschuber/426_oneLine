@@ -58,5 +58,14 @@
         <url-pattern>/Shop/Details</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SBuy</servlet-name>
+        <servlet-class>Control.SBuy</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SBuy</servlet-name>
+        <url-pattern>/Shop/Buy</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

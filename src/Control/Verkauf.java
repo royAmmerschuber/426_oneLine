@@ -41,4 +41,34 @@ public class Verkauf {
         }
         return -1;
     }
+    public static boolean buy(int id,int amount){
+
+        try {
+            PreparedStatement p = Database.getConnection().prepareStatement(
+                    "SELECT amount FROM product WHERE id=?;"
+            );
+            p.setInt(1,id);
+            ResultSet rs= p.executeQuery();
+            rs.next();
+            if(rs.getInt(1)==amount){
+                p=Database.getConnection().prepareStatement(
+                        "DELETE FROM product where id=?"
+                );
+                p.setInt(1,id);
+                p.execute();
+                return true;
+            }else if(rs.getInt(1)>amount){
+                p=Database.getConnection().prepareStatement(
+                        "UPDATE product set amount=amount-? where id=?"
+                );
+                p.setInt(1,amount);
+                p.setInt(2,id);
+                p.execute();
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
