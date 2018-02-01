@@ -30,7 +30,16 @@ footer {
 .colorchill {
     background: linear-gradient(#ffb3ff, #660066);
 }
-
+.sell_amount{
+    width: 60px;
+    margin-right: 5px;
+}
+.img-responsive{
+    height: 190px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
 footer{
     background:#101010;
     color: white;

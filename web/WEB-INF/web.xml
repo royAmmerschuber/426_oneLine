@@ -48,4 +48,15 @@
         <servlet-name>SSell</servlet-name>
         <url-pattern>/Shop/Sell</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SDetails</servlet-name>
+        <servlet-class>Control.SDetails</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SDetails</servlet-name>
+        <url-pattern>/Shop/Details</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

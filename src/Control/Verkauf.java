@@ -3,10 +3,11 @@ package Control;
 import Persistence.Database;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Verkauf {
-    public static boolean addProduct( String name, int amount,String description, float price, int userId,String category,String image){
+    public static int addProduct( String name, int amount,String description, float price, int userId,String category,String image){
 
         try {
             PreparedStatement p= Database.getConnection().prepareStatement(
@@ -27,11 +28,18 @@ public class Verkauf {
             p.setInt(3,userId);
             p.setString(4,image);
             p.execute();
-
+            p=Database.getConnection().prepareStatement(
+                    "SELECT id from product where name=? AND description=? and sellerFK=? ORDER BY id DESC LIMIT 1");
+            p.setString(1,name);
+            p.setString(2,description);
+            p.setInt(3,userId);
+            ResultSet rs=p.executeQuery();
+            rs.next();
+            return rs.getInt(1);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return true;
+        return -1;
     }
 
 
