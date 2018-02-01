@@ -90,10 +90,7 @@
         </div>
     </div>
 </div>
-        <footer class="container-fluid text-center">
-            <p>oneLine Shop Copyright</p>
-
-        </footer>
+    <jsp:include page="footer.jsp"/>
 </div>
 </body>
 </html>

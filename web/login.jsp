@@ -86,9 +86,7 @@
 	<script src="${pageContext.request.contextPath}/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
-	<footer class="container-fluid text-center">
-		<p>oneLine Shop Copyright</p>
-	</footer>
+	<jsp:include page="footer.jsp"/>
 	</div>
 </body>
 </html>
