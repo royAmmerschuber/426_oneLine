@@ -9,6 +9,18 @@
     border-radius: 0;
 }
 
+footer > .container{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.first-box{padding:10px;background: #8430b4;}
+.second-box{padding:10px; background: #d719ff;}
+.third-box{padding:10px;background: #8430b4;}
+.fourth-box{padding:10px;background: #d719ff;}
+
 /* Remove the jumbotron's default bottom margin */
 .jumbotron {
     margin-bottom: 0;
@@ -16,7 +28,23 @@
     color: white;
 }
 
+footer a {
+    color:white;
+    /* First we need to help some browsers along for this to work.
+       Just because a vendor prefix is there, doesn't mean it will
+       work in a browser made by that vendor either, it's just for
+       future-proofing purposes I guess. */
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+}
+ footer a:hover { color: #272727; text-decoration: none;}
 /* Add a gray background color and some padding to the footer */
+
+
 footer {
     background-color: #f2f2f2;
     padding: 25px;
@@ -40,10 +68,10 @@ footer {
     margin-right: auto;
     margin-left: auto;
 }
-footer{
+footer, footer > div{
     background:#101010;
     color: white;
-    height: 50px;
+    min-height: 50px;
 }
 
 h4{

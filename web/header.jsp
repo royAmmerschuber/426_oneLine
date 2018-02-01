@@ -14,7 +14,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#">oneLine</a>
             </div>
             <%--<small class="headname">oneLine</small>--%>
             <div class="collapse navbar-collapse" id="myNavbar">

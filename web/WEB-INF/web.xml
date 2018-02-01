@@ -58,5 +58,14 @@
         <url-pattern>/Shop/Details</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SContact</servlet-name>
+        <servlet-class>Control.SContact</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SContact</servlet-name>
+        <url-pattern>/Shop/Contact</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>

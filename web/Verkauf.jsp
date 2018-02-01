@@ -66,8 +66,5 @@
 </body>
 
 
-<footer class="container-fluid text-center">
-    <p>Online Store Copyright</p>
-
-</footer>
+<jsp:include page="footer.jsp"/>
 </html>
