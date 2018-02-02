@@ -17,7 +17,7 @@ public class Register extends javax.servlet.http.HttpServlet {
             String[] pair=y.split("=");
             values.put(pair[0],pair[1]);
         }
-        
+
         //name=test&firstName=test&userName=test&password1=test&password2=test&email=test%40test.cj&phone=test&country=test&city=test&street=test&plz=test
         if(values.get("password1").equals(values.get("password2"))){
 
