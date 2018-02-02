@@ -35,12 +35,16 @@
                             <input type="text" class="form-control" name="search" size="50" placeholder="Search...">
                         </form>
                     </li>
-                    <li><a href="/Auth/Login"><span class="glyphicon glyphicon-user"></span> <%
+                    <li><%
                     if(session.getAttribute("name")==null){
+                        out.print("<a href=\"/Auth/Login\"><span class=\"glyphicon glyphicon-user\"></span> ");
                         out.print("Login");
+                        out.print("</a>");
                     }else{
+                        out.print("<a href='#'><span class=\"glyphicon glyphicon-user\"></span>");
                         out.print(session.getAttribute("name"));
-                    }%></a></li>
+                        out.print("</a>");
+                    }%></li>
                 </ul>
             </div>
         </div>

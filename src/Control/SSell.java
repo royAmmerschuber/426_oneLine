@@ -58,7 +58,7 @@ public class SSell extends HttpServlet {
                 request.getParameter("descr"),
                 Float.parseFloat(request.getParameter("price")),
                 (int)request.getSession().getAttribute("id"),
-                "Fish",
+                request.getParameter("category"),
                 filename);
         response.sendRedirect("/Shop/Details?id="+id);
     }

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "SBuy")
 public class SBuy extends HttpServlet {
@@ -18,7 +19,11 @@ public class SBuy extends HttpServlet {
             response.sendRedirect("/Auth/Login");
             return;
         }
-        Verkauf.buy(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("amount")));
-        request.getRequestDispatcher("/OrderComplete.jsp").forward(request,response);
+        if(Verkauf.buy(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("amount")))){
+            request.getRequestDispatcher("/OrderComplete.jsp").forward(request,response);
+
+        }else{
+            request.getRequestDispatcher("/Shop/Details").include(request,response);
+        }
     }
 }

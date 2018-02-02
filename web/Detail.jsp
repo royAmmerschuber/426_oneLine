@@ -81,7 +81,7 @@
             <ul class="menu-items" style="color: white"><%try{out.print(rs.getString(6));}catch (Exception e){e.printStackTrace();}%>
             </ul>
             <div style="width:100%;border-top:1px solid silver">
-                <p style="padding:15px;">
+                <p style="padding:15px; word-wrap: break-word">
                     <small style="color: white">
                         <%try{out.print(rs.getString(3));}catch (Exception e){e.printStackTrace();}%>
                     </small>
