@@ -1,3 +1,5 @@
+<%@ page import="Persistence.Database" %>
+<%@ page import="java.sql.ResultSet" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +30,21 @@
                 <br><br>
                 <h5 style="color:#337ab7">set Price:</h5>
                 <input id="product_weight" name="price" placeholder="PRODUCT WEIGHT" class="inputfields" required="" type="text">
+
+                <br><br>
+                <h5 style="color:#337ab7">set Price:</h5>
+                <select name="category" required>
+                    <%
+                        try {
+                            ResultSet rs=Database.getConnection().createStatement().executeQuery("SELECT name from category");
+                            while(rs.next()){
+                                out.println("<option>"+rs.getString(1)+"</option>");
+                            }
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    %>
+                </select>
 
                 <br><br>
                 <h5 style="color:#337ab7">add Image</h5><br>

@@ -61,13 +61,7 @@
 						</button>
 					</div><br>
 					<small class="signup">or sign up here</small><br>
-					<button class="signup"> create Account</button>
-
-					<div class="text-center p-t-90">
-						<a class="txt1" href="#">
-							Forgot Password?
-						</a>
-					</div>
+					<a class="signup" href="/Auth/Register"> create Account</a>
 				</form>
 			</div>
 		</div>
