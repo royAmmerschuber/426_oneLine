@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
-    <title>One Line Sell</title>
+    <title>Oneline Sell</title>
 </head>
 <body>
 <div class="colorchill">

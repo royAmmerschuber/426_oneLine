@@ -9,17 +9,17 @@
     <p>oneLine Shop Copyright</p>
     <div class="container">
     <a class="row text-center">
-        <a class="col-sm-3 col-xs-6 first-box"  href="/Shop/Contact">
+        <a class="col-sm-3 col-xs-6 first-box"  href="#">
             <h1><span class="glyphicon glyphicon-earphone"></span></h1>
             <h3>Phone</h3>
-            <p>+41 75 456</p><br>
+            <p>+41 75 456 88 65</p><br>
         </a>
-        <a class="col-sm-3 col-xs-6 second-box"  href="/Shop/Contact">
+        <a class="col-sm-3 col-xs-6 second-box"  href="#">
             <h1><span class="glyphicon glyphicon-home"></span></h1>
             <h3>Location</h3>
             <p>3004</p><br>
         </a>
-        <a class="col-sm-3 col-xs-6 third-box" href="/Shop/Contact">
+        <a class="col-sm-3 col-xs-6 third-box" href="#">
             <h1><span class="glyphicon glyphicon-send"></span></h1>
             <h3>E-mail</h3>
             <p>help@needsome.com</p><br>
