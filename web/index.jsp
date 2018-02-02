@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src=${pageContext.request.contextPath}/js/diashow.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css">
-    <title>Startseite</title>
+    <title>oneLine Home</title>
 </head>
 <body>
 <div class="colorchill">
