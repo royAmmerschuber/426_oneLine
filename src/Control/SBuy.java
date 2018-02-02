@@ -19,6 +19,6 @@ public class SBuy extends HttpServlet {
             return;
         }
         Verkauf.buy(Integer.parseInt(request.getParameter("id")),Integer.parseInt(request.getParameter("amount")));
-        response.sendRedirect("/Shop/Details?id="+request.getParameter("id"));
+        request.getRequestDispatcher("/OrderComplete.jsp").forward(request,response);
     }
 }

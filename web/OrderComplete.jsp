@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V2</title>
+	<title>oneLine Order complete</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -32,13 +32,13 @@
 					</span>
 
 					<div class="dscrppt" >
-						<h2 class="congrats">Congratulatioins, your product is<br>beeing delivered soon</h2>
+						<h2 class="congrats">Congratulatioins, your is <br> beeing delivered soon</h2>
 					</div>
 <br>
 					<div class="container-contact2-form-btn">
 						<div class="wrap-contact2-form-btn">
 							<div class="contact2-form-bgbtn"></div>
-							<button class="contact2-form-btn">
+							<button class="contact2-form-btn" href="/Shop/Main">
 								Back to Mainpage
 							</button>
 						</div>

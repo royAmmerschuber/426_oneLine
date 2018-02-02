@@ -68,6 +68,10 @@ footer {
     margin-right: auto;
     margin-left: auto;
 }
+.oldPrice{
+    text-decoration: darkred line-through;
+    color: red;
+}
 footer, footer > div{
     background:#101010;
     color: white;
