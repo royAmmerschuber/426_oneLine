@@ -98,3 +98,26 @@ h6{
     border-radius: 3px;
     padding: 2px 4px;
 }
+.panel-footer{
+    min-height: 55px;
+}
+.panel-footer .dropdown{
+    float: right;
+}
+
+.edit-menu{
+    width:fit-content;
+    height: fit-content;
+    border-radius: 7px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 10px;
+}
+.hidden{
+    visibility: hidden;
+}

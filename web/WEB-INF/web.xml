@@ -85,6 +85,13 @@
         <url-pattern>/Shop/Kart</url-pattern>
     </servlet-mapping>
 
-
+    <servlet>
+        <servlet-name>SMyProd</servlet-name>
+        <servlet-class>Control.SMyProd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SMyProd</servlet-name>
+        <url-pattern>/Shop/MyProd</url-pattern>
+    </servlet-mapping>
 
 </web-app>

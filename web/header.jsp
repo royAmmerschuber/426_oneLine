@@ -25,6 +25,7 @@
                     <%
                         if (request.getSession().getAttribute("id")!=null){
                             out.print("<li><a href=\"/Shop/Kart\">Kart</a></li>" +
+                                    "<li><a href='/Shop/MyProd'>My Products</a></li>'" +
                                     "<li><a href=\"/Auth/Login?logout=true\">Logout</a></li>");
                         }
                     %>

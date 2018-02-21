@@ -32,7 +32,7 @@
         ResultSet rs=null;
         try {
             PreparedStatement p=Database.getConnection().prepareStatement(
-                    "SELECT p.name,p.amount,p.description,p.price,u.userName,c.name,i.image FROM product AS p \n" +
+                    "SELECT p.name,p.amount,p.description,p.price,u.userName,c.name,i.image, p.discPrice FROM product AS p \n" +
                     "\tLEFT JOIN user AS u ON u.id=p.sellerFK\n" +
                     "    LEFT JOIN category AS c ON c.id=p.categoryFK\n" +
                     "Left Join image as i on p.id=i.productFK"+
@@ -59,7 +59,21 @@
             <h3 style="color: white"><%try{out.print(rs.getString(1));}catch (Exception e){e.printStackTrace();}%></h3>
             <!-- Precios -->
             <h4  style="color: black;"><small>Price</small></h4>
-            <h6 style="margin-top:0px; color: white;"><%try{out.print(rs.getString(4));}catch (Exception e){e.printStackTrace();}%></h6>
+            <%
+                try{
+                    if(rs.getString(8)==null){
+                        out.print("<h6 style='margin-top:0px; color: white;'>");
+                        out.print(rs.getString(4));
+                        out.print("</h6>");
+                    }else{
+                        out.print("<h6 style='margin-top:0px; ' class='oldPrice'>");
+                        out.print(rs.getString(4));
+                        out.print("</h6>");
+                        out.print("<h6 style='margin-top:0px; color: white;'>");
+                        out.print(rs.getString(8));
+                        out.print("</h6>");
+                    }
+                }catch (Exception e){e.printStackTrace();}%>
 
             <h4  style="color: black;"><small>Seller</small></h4>
             <h6 style="margin-top:0px; color: white;"><%try{out.print(rs.getString(5));}catch (Exception e){e.printStackTrace();}%></h6>
