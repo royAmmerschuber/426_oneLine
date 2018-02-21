@@ -68,9 +68,9 @@
             <div class="section" style="padding-bottom:20px;">
                 <h4 class="title-attr" style="color: black;"><small>Menge</small></h4>
                 <div>
-                    <form action="/Shop/Buy">
-                        <input value="1" type="number" name=amount class="sell_amount"/>/<%try{out.print(rs.getString(2));}catch (Exception e){e.printStackTrace();}%>
-                        <button class="btn btn-success" name="id" value="<%out.print(request.getParameter("id"));%>">Buy</button>
+                    <form action="/Shop/Kart">
+                        <input value="1" type="number" name=amount class="sell_amount" max="<%try{out.print(rs.getString(2));}catch (Exception e){e.printStackTrace();}%>" min="0"/>/<%try{out.print(rs.getString(2));}catch (Exception e){e.printStackTrace();}%>
+                        <button class="btn btn-success" name="id" value="<%out.print(request.getParameter("id"));%>">Kart</button>
                     </form>
                 </div>
             </div>

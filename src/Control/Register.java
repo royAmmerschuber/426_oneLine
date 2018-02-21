@@ -20,24 +20,28 @@ public class Register extends javax.servlet.http.HttpServlet {
 
         //name=test&firstName=test&userName=test&password1=test&password2=test&email=test%40test.cj&phone=test&country=test&city=test&street=test&plz=test
         if(values.get("password1").equals(values.get("password2"))){
+            if(Login.CheckUsernameExists(values.get("userName"))) {
+                if (Login.addUser(
+                        values.get("userName"),
+                        values.get("password1"),
+                        values.get("firstName"),
+                        values.get("name"),
+                        values.get("country"),
+                        values.get("city"),
+                        values.get("plz"),
+                        values.get("street"),
+                        values.get("email"),
+                        values.get("phone")
+                )) {
+                    response.sendRedirect("/Auth/Login");
+                    return;
+                } else {
+                    request.getRequestDispatcher("/Register.jsp").forward(request, response);
 
-            if(Login.addUser(
-                    values.get("userName"),
-                    values.get("password1"),
-                    values.get("firstName"),
-                    values.get("name"),
-                    values.get("country"),
-                    values.get("city"),
-                    values.get("plz"),
-                    values.get("street"),
-                    values.get("email"),
-                    values.get("phone")
-            )){
-                response.sendRedirect("/Auth/Login");
-                return;
+                }
             }else{
-                request.getRequestDispatcher("/Register.jsp").forward(request,response);
-
+                request.setAttribute("msg","User existiert bereits");
+                request.getRequestDispatcher("/Register.jsp").forward(request, response);
             }
 
 

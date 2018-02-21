@@ -7,6 +7,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Verkauf {
+    public static boolean checkOwner(int pId, int uId){
+        try{
+            PreparedStatement p=Database.getConnection().prepareStatement(
+                    "Select sellerFK from product where id=?"
+            );
+            ResultSet rs=p.executeQuery();
+            rs.next();
+            if(rs.getInt(1)==uId){
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    //Verkauf
     public static int addProduct( String name, int amount,String description, float price, int userId,String category,String image){
 
         try {
@@ -41,31 +57,95 @@ public class Verkauf {
         }
         return -1;
     }
-    public static boolean buy(int id,int amount){
-
+    public static boolean dropProduct(int pId){
+        try{
+            PreparedStatement p=Database.getConnection().prepareStatement(
+                    "delete from product where id=?"
+            );
+            p.setInt(1,pId);
+            return  p.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public static boolean setDiscount(int pId, double price){
+        try {
+            PreparedStatement p=Database.getConnection().prepareStatement(
+                    "update product set discPrice=? where id=?"
+            );
+            p.setInt(2,pId);
+            p.setDouble(1,price);
+            return p.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public static boolean dropDiscount(int pId){
+        try {
+            PreparedStatement p=Database.getConnection().prepareStatement(
+                        "UPDATE product set discPrice=null where id=?"
+            );
+            p.setInt(1,pId);
+            return p.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    //Kauf
+    public static boolean buy(int uId){
         try {
             PreparedStatement p = Database.getConnection().prepareStatement(
-                    "SELECT amount FROM product WHERE id=?;"
+                    "update kart as k " +
+                            "left join product as p on p.id=k.productfk " +
+                            "set p.amount=p.amount-k.amount " +
+                            "where userFK=?"
             );
-            p.setInt(1,id);
-            ResultSet rs= p.executeQuery();
+            p.setInt(1,uId);
+            p.execute();
+            p = Database.getConnection().prepareStatement(
+                    "delete from kart where userFK=?"
+            );
+            p.setInt(1,uId);
+            p.execute();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public static boolean toKart(int pId, int amount, int uId) {
+        try {
+            PreparedStatement p=Database.getConnection().prepareStatement(
+                    "SELECT amount>=? from product where id=?"
+            );
+            p.setInt(1,amount);
+            p.setInt(2,pId);
+            ResultSet rs=p.executeQuery();
             rs.next();
-            if(rs.getInt(1)==amount){
-                p=Database.getConnection().prepareStatement(
-                        "DELETE FROM product where id=?"
-                );
-                p.setInt(1,id);
-                p.execute();
-                return true;
-            }else if(rs.getInt(1)>amount){
-                p=Database.getConnection().prepareStatement(
-                        "UPDATE product set amount=amount-? where id=?"
-                );
-                p.setInt(1,amount);
-                p.setInt(2,id);
-                p.execute();
+            if(!rs.getBoolean(1)){
+                return false;
+            }
+
+            p = Database.getConnection().prepareStatement(
+                    "DELETE from kart where userFK=? and productFK=?"
+            );
+            p.setInt(1,uId);
+            p.setInt(2,pId);
+            p.execute();
+            if(amount==0){
                 return true;
             }
+            p=Database.getConnection().prepareStatement(
+                    "Insert into kart (userFK,productFK,amount) VALUES (?,?,?)"
+            );
+            p.setInt(1,uId);
+            p.setInt(2,pId);
+            p.setInt(3,amount);
+            p.execute();
+            return true;
         }catch (Exception e){
             e.printStackTrace();
         }

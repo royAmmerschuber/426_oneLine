@@ -76,5 +76,15 @@
         <url-pattern>/Shop/Contact</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SKart</servlet-name>
+        <servlet-class>Control.SKart</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SKart</servlet-name>
+        <url-pattern>/Shop/Kart</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>

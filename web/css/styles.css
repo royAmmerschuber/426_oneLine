@@ -91,3 +91,10 @@ h6{
     float: right;
 }*/
 
+.xButton{
+    color:white;
+    background-color: #ff4632;
+    float: right;
+    border-radius: 3px;
+    padding: 2px 4px;
+}

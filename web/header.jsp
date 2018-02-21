@@ -24,10 +24,10 @@
                     <li><a href="/Shop/Sell">Sale</a></li>
                     <%
                         if (request.getSession().getAttribute("id")!=null){
-                            out.print("<li><a href=\"/Auth/Login?logout=true\">Logout</a></li>");
+                            out.print("<li><a href=\"/Shop/Kart\">Kart</a></li>" +
+                                    "<li><a href=\"/Auth/Login?logout=true\">Logout</a></li>");
                         }
                     %>
-                    <%--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^--%>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
