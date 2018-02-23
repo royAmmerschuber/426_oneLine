@@ -76,7 +76,7 @@
                     }else{
                         //language=HTML
                         s+= "      <li role='presentation'><a role='menuitem' tabindex='-1' href='#' onclick=\"addDiscWindow('"+name+"',"+id+")\">edit Discount</a></li>" +
-                                "      <li role='presentation'><a role='menuitem' tabindex='-1' href='#' onclick='deleteDiscWindow('"+name+"',"+id+")'>remove Discount</a></li>";
+                                "      <li role='presentation'><a role='menuitem' tabindex='-1' href='#' onclick=\"deleteDiscWindow('"+name+"',"+id+")\">remove Discount</a></li>";
                     }
                     //language=HTMl
                     s+= "      <li role='presentation'><a role='menuitem' tabindex='-1' href='#' onclick=\"deleteWindow('"+name+"',"+id+")\">Remove Product</a></li>\n" +

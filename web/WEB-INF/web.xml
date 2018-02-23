@@ -94,4 +94,13 @@
         <url-pattern>/Shop/MyProd</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SEdit</servlet-name>
+        <servlet-class>Control.SEdit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SEdit</servlet-name>
+        <url-pattern>/Shop/Edit</url-pattern>
+    </servlet-mapping>
+
 </web-app>
